@@ -69,13 +69,14 @@
 
 
         <TextView
+            android:onClick="addNote"
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="30dp"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="#F5F5F5"
             android:text="Take a Note 📝" />
 
         <TextView
@@ -85,7 +86,7 @@
             android:layout_weight="1"
             android:textSize="30dp"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="#F5F5F5"
             android:text="Add a Task ⚒️" />
 
         <TextView
@@ -95,7 +96,7 @@
             android:layout_weight="1"
             android:textSize="30dp"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="#F5F5F5"
             android:text="Set an Alarm ⏰" />
 
         <TextView
@@ -105,7 +106,7 @@
             android:layout_weight="1"
             android:textSize="30dp"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="#F5F5F5"
             android:text="Set a Reminder 🔔" />
     </LinearLayout>
 
@@ -122,12 +123,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:onClick="notewall"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginHorizontal="18dp"
             android:layout_weight="1"
-            android:background="@drawable/noteaddicon"></TextView>
+            android:background="@drawable/noteaddicon"
+            android:onClick="notewall"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></TextView>
 
         <TextView
             android:layout_width="30dp"

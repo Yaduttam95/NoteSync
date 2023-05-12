@@ -2,6 +2,7 @@ package com.example.notesync;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -58,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void notewall(View view) {
+        Intent intent = new Intent(MainActivity.this, NoteWallActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void addNote(View view) {
+        Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
+        startActivity(intent);
 
 
     }

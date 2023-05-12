@@ -24,11 +24,10 @@ public class DbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public boolean deleteNote(long noteId) {
+    public void deleteNote(long noteId) {
         SQLiteDatabase db = this.getWritableDatabase();
         int rowsAffected = db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(noteId)});
         db.close();
-        return rowsAffected > 0;
     }
 
 

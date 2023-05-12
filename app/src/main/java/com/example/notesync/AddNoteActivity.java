@@ -2,6 +2,7 @@ package com.example.notesync;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +20,7 @@ public class AddNoteActivity extends AppCompatActivity {
     private TextView htime;
     private EditText titleText;
     private EditText noteText;
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,17 @@ public class AddNoteActivity extends AppCompatActivity {
 
     }
 
-    private Runnable dateRunnable = new Runnable() {
+    private final Runnable dateRunnable = new Runnable() {
         @Override
         public void run() {
             Calendar calendar = Calendar.getInstance();
-            SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
             String hotime = timeFormat.format(calendar.getTime());
             htime.setText(hotime);
             handler.postDelayed(this, 1000);
         }
     };
+    @SuppressWarnings("resource")
     public void addNote(View view) {
         String title = titleText.getText().toString().trim();
         String note = noteText.getText().toString().trim();
@@ -65,10 +67,9 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     public String getCurrentDate() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date currentDate = new Date();
-        String formattedDate = dateFormat.format(currentDate);
-        return formattedDate;
+        return dateFormat.format(currentDate);
     }
 
     public void disbtn(View view) {

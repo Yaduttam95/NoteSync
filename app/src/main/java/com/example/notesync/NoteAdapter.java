@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
-    private List<Note> noteList;
-    private OnNoteClickListener onNoteClickListener;
+    private final List<Note> noteList;
+    private final OnNoteClickListener onNoteClickListener;
 
     public NoteAdapter(List<Note> noteList, OnNoteClickListener onNoteClickListener) {
         this.noteList = noteList;

@@ -1,18 +1,14 @@
 package com.example.notesync;
 
 public class Note {
-    private int id;
-    private String title;
-    private String note;
-    private String time;
-    private String date;
+    private final int id;
+    private final String title;
+    private final String note;
 
-    public Note(int id, String title, String note, String time, String date) {
+    public Note(int id, String title, String note) {
         this.id = id;
         this.title = title;
         this.note = note;
-        this.time = time;
-        this.date = date;
     }
 
     public int getId() {
@@ -27,11 +23,4 @@ public class Note {
         return note;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public String getDate() {
-        return date;
-    }
 }

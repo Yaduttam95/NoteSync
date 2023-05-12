@@ -1,39 +1,29 @@
 package com.example.notesync;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
 public class NoteWallActivity extends AppCompatActivity implements NoteAdapter.OnNoteClickListener {
-    private RecyclerView recyclerView;
     private NoteAdapter noteAdapter;
-    private DbHelper dbHelper;
-    private List<Note> noteList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_wall);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        dbHelper = new DbHelper(this);
+        @SuppressWarnings("resource") DbHelper dbHelper = new DbHelper(this);
 
-        noteList = dbHelper.getAllNotes();
+        List<Note> noteList = dbHelper.getAllNotes();
 
         noteAdapter = new NoteAdapter(noteList, this);
         recyclerView.setAdapter(noteAdapter);

@@ -73,7 +73,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
                 @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE));
 
-                Note noteItem = new Note(id, title, note, time, date);
+                Note noteItem = new Note(id, title, note);
                 noteList.add(noteItem);
             } while (cursor.moveToNext());
         }
@@ -97,7 +97,7 @@ public class DbHelper extends SQLiteOpenHelper {
             @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
             @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE));
 
-            note = new Note(id, title, noteContent, time, date);
+            note = new Note(id, title, noteContent);
         }
 
         cursor.close();

@@ -88,12 +88,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-// ...
-
     private void showInfoBox() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottomsheet, null);
+        @SuppressLint("InflateParams") View bottomSheetView = getLayoutInflater().inflate(R.layout.bottomsheet, null);
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
@@ -101,4 +98,5 @@ public class MainActivity extends AppCompatActivity {
     public void bottom(View view) {
         showInfoBox();
     }
+
 }

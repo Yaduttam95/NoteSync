@@ -43,7 +43,7 @@
                 android:text="delete"
                 android:textColor="#131313"
                 android:textSize="18sp"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="HardcodedText,InefficientWeight,TouchTargetSizeCheck,TextSizeCheck" />
 
         </LinearLayout>
 

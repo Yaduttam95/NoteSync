@@ -2,6 +2,7 @@ package com.example.notesync;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -68,4 +69,8 @@ public class NoteWallActivity extends AppCompatActivity implements NoteAdapter.O
         startActivity(intent);
     }
 
+    public void addnotebtn(View view) {
+        Intent intent = new Intent(this, AddNoteActivity.class);
+        startActivity(intent);
+    }
 }

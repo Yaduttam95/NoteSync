@@ -8,12 +8,12 @@
     android:background="#131313"
     tools:context=".NoteWallActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout3"
         android:layout_marginVertical="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="25dp"
+        android:paddingVertical="10dp"
         android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,18 +21,43 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:fontFamily="@font/aloeverafont"
-            android:layout_height="match_parent"
-            android:text="YOUR\n     NOTES"
-            android:textColor="@color/white"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="73.5sp">
-        </TextView>
+            android:fontFamily="@font/aloeverafont"
+            android:text="YOUR"
+            android:textColor="@color/white"
+            android:textSize="74sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/aloeverafont"
+            android:text="NOTES"
+            android:textColor="@color/white"
+            android:textSize="74sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline_add_24"
+            android:onClick="addnotebtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/view2"

@@ -1,9 +1,9 @@
 package com.example.notesync;
 
 public class Task {
-    private int id;
-    private String title;
-    private String task;
+    private final int id;
+    private final String title;
+    private final String task;
 
     public Task(int id, String title, String task) {
         this.id = id;

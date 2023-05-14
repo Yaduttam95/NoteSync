@@ -52,8 +52,9 @@ public class AddTaskActivity extends AppCompatActivity {
         String task = taskText.getText().toString().trim();
 
         if (!title.isEmpty() && !task.isEmpty()) {
-            DbHelper dbHelper = new DbHelper(this);
-            dbHelper.addTask(title, task);
+            try (DbHelper dbHelper = new DbHelper(this)) {
+                dbHelper.addTask(title, task);
+            }
 
             titleText.setText("");
             taskText.setText("");

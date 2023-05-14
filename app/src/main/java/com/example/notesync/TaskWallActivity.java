@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.List;
 
@@ -30,8 +32,9 @@ public class TaskWallActivity extends AppCompatActivity implements OnTaskClickLi
 
     private List<Task> getAllTasksFromDatabase() {
         List<Task> taskList;
-        DbHelper dbHelper = new DbHelper(this);
-        taskList = dbHelper.getAllTasks();
+        try (DbHelper dbHelper = new DbHelper(this)) {
+            taskList = dbHelper.getAllTasks();
+        }
         return taskList;
     }
 
@@ -48,11 +51,23 @@ public class TaskWallActivity extends AppCompatActivity implements OnTaskClickLi
 
     private void deleteTaskFromDatabase(int position) {
         Task task = taskList.get(position);
-        DbHelper dbHelper = new DbHelper(this);
-        dbHelper.deleteTask(task.getId());
+        try (DbHelper dbHelper = new DbHelper(this)) {
+            dbHelper.deleteTask(task.getId());
+        }
 
         taskList.remove(position);
         adapter.notifyItemRemoved(position);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+    }
+
+    public void addtasksbtn(View view) {
+        Intent intent = new Intent(this, AddTaskActivity.class);
+        startActivity(intent);
+    }
 }

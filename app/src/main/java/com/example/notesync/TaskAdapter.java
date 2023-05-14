@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 interface OnTaskClickListener {
+    @SuppressWarnings("unused")
     void onTaskClick(int position);
 
     void onDeleteClick(int position);
 }
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
-    private List<Task> taskList;
+    private final List<Task> taskList;
     private OnTaskClickListener onTaskClickListener;
 
     public TaskAdapter(List<Task> taskList) {
@@ -58,13 +59,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             taskTextView = itemView.findViewById(R.id.taskTextView);
             deleteButton = itemView.findViewById(R.id.deletebtn);
 
-            deleteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION && onTaskClickListener != null) {
-                        onTaskClickListener.onDeleteClick(position);
-                    }
+            deleteButton.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION && onTaskClickListener != null) {
+                    onTaskClickListener.onDeleteClick(position);
                 }
             });
         }

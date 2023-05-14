@@ -52,8 +52,9 @@ public class AddNoteActivity extends AppCompatActivity {
         String currentDate = getCurrentDate().trim();
 
         if (!title.isEmpty() && !note.isEmpty() && !currentTime.isEmpty() && !currentDate.isEmpty()) {
-            DbHelper dbHelper = new DbHelper(this);
-            dbHelper.addNote(title, note, currentTime, currentDate);
+            try (DbHelper dbHelper = new DbHelper(this)) {
+                dbHelper.addNote(title, note, currentTime, currentDate);
+            }
             System.out.println(currentDate);
 
             titleText.setText("");

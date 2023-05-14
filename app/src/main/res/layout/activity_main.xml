@@ -58,119 +58,85 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginVertical="10dp"
-        android:orientation="vertical"
-        android:paddingVertical="20dp"
-        android:paddingHorizontal="25dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginVertical="10dp"
         android:background="@drawable/homemid"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:orientation="vertical"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
 
         <TextView
-            android:onClick="addNote"
-            android:fontFamily="@font/aloeverafont"
+
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:gravity="center_vertical"
-            android:textColor="#F5F5F5"
-            android:text="Take a Note 📝" />
-
-        <TextView
-            android:onClick="addTask"
-            android:id="@+id/textView6"
             android:fontFamily="@font/aloeverafont"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="30dp"
             android:gravity="center_vertical"
+            android:onClick="addNote"
+            android:text="Take a Note 📝"
             android:textColor="#F5F5F5"
-            android:text="Add a Task ⚒️" />
+            android:textSize="30dp"
+            tools:ignore="HardcodedText,SpUsage,TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView5"
-            android:fontFamily="@font/aloeverafont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="30dp"
+            android:fontFamily="@font/aloeverafont"
             android:gravity="center_vertical"
+            android:onClick="notewall"
+            android:text="View all Notes 📝"
             android:textColor="#F5F5F5"
-            android:text="Set an Alarm ⏰" />
+            android:textSize="30dp"
+            tools:ignore="HardcodedText,SpUsage,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/aloeverafont"
+            android:gravity="center_vertical"
+            android:onClick="addTask"
+            android:text="Add a Task ⚒️"
+            android:textColor="#F5F5F5"
+            android:textSize="30dp"
+            tools:ignore="HardcodedText,SpUsage,TextContrastCheck" />
+
 
         <TextView
             android:id="@+id/textView7"
-            android:fontFamily="@font/aloeverafont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="30dp"
+            android:fontFamily="@font/aloeverafont"
             android:gravity="center_vertical"
-            android:textColor="#F5F5F5"
-            android:text="Set a Reminder 🔔" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@drawable/bottomnav"
-        android:paddingVertical="20dp"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@drawable/noteaddicon"
-            android:onClick="notewall"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></TextView>
-
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@drawable/tasks"
             android:onClick="taskWall"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"></TextView>
-
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@drawable/homeicon"></TextView>
-
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@drawable/alarmicon"></TextView>
-
-        <TextView
-            android:onClick="bottom"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@drawable/info"></TextView>
-
-
+            android:text="View all Tasks ⚒️"
+            android:textColor="#F5F5F5"
+            android:textSize="30dp"
+            tools:ignore="HardcodedText,SpUsage,TextContrastCheck" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/info"
+        android:onClick="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck">
+
+    </TextView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

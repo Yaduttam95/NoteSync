@@ -32,9 +32,8 @@ public class DbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public void deleteNote(long noteId) {
+    public void deleteNote() {
         SQLiteDatabase db = this.getWritableDatabase();
-        int rowsAffected = db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(noteId)});
         db.close();
     }
 
@@ -85,8 +84,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
                 @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(COLUMN_TITLE));
                 @SuppressLint("Range") String note = cursor.getString(cursor.getColumnIndex(COLUMN_NOTE));
-                @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
-                @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE));
 
                 Note noteItem = new Note(id, title, note);
                 noteList.add(noteItem);
@@ -109,8 +106,6 @@ public class DbHelper extends SQLiteOpenHelper {
             @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
             @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(COLUMN_TITLE));
             @SuppressLint("Range") String noteContent = cursor.getString(cursor.getColumnIndex(COLUMN_NOTE));
-            @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
-            @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE));
 
             note = new Note(id, title, noteContent);
         }

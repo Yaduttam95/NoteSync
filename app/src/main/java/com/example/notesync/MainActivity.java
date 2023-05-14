@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,11 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
+
     private final Runnable dateRunnable = new Runnable() {
         @Override
         public void run() {
             Calendar calendar = Calendar.getInstance();
-            @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy");
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("MMM-d");
             @SuppressLint("SimpleDateFormat") SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
             String hodate = dateFormat.format(calendar.getTime());
             String hotime = timeFormat.format(calendar.getTime());
@@ -69,7 +75,30 @@ public class MainActivity extends AppCompatActivity {
     public void addNote(View view) {
         Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
         startActivity(intent);
+    }
+
+    public void taskWall(View view) {
+        Intent intent = new Intent(MainActivity.this, TaskWallActivity.class);
+        startActivity(intent);
+    }
+
+    public void addTask(View view) {
+        Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
+        startActivity(intent);
+    }
 
 
+
+// ...
+
+    private void showInfoBox() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottomsheet, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
+    }
+
+    public void bottom(View view) {
+        showInfoBox();
     }
 }

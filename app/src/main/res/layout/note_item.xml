@@ -2,6 +2,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp"
@@ -14,20 +15,23 @@
 
     <TextView
         android:id="@+id/textNoteCount"
+        android:fontFamily="@font/inconsolatafont"
         android:layout_width="wrap_content"
+        android:layout_marginTop="3dp"
         android:layout_height="wrap_content"
-        android:textColor="#F5F5F5"
-        android:textSize="17sp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true" />
+        android:textColor="#92DDDCDC"
+        android:textSize="22sp"
+        android:layout_alignParentStart="true"/>
 
     <ImageView
         android:id="@+id/arrowIcon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@drawable/arrowout"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true" />
+        android:layout_marginTop="3dp"
+        android:src="@drawable/arrowout"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck"
+        android:contentDescription="TODO" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,6 +44,7 @@
 
         <TextView
             android:id="@+id/textTitle"
+            android:fontFamily="@font/inconsolatafont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#F5F5F5"
@@ -51,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#F5F5F5"
-            android:textSize="17sp" />
+            android:textSize="20sp" />
 
 
 

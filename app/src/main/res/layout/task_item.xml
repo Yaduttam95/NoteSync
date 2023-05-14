@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="20dp"
+    android:background="@drawable/taskbackg"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inconsolatafont"
+        android:textColor="#F5F5F5"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/taskTextView"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/inconsolatafont"
+        android:layout_height="wrap_content"
+        android:textColor="#F5F5F5"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/deletebtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/delete"
+        android:clickable="true"
+        android:focusable="true"
+        tools:ignore="SpeakableTextPresentCheck"></TextView>
+</LinearLayout>

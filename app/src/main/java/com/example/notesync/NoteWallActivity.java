@@ -45,6 +45,13 @@ public class NoteWallActivity extends AppCompatActivity implements NoteAdapter.O
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+    }
+
 
     @Override
     public void onNoteClick(int position) {

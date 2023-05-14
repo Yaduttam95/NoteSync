@@ -13,6 +13,12 @@
         android:theme="@style/Theme.NoteSync"
         tools:targetApi="31">
         <activity
+            android:name=".TaskWallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddTaskActivity"
+            android:exported="false" />
+        <activity
             android:name=".Notedesc"
             android:exported="false" />
         <activity

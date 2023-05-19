@@ -42,7 +42,7 @@ public class Notedesc extends AppCompatActivity {
     public void deletenote(View view) {
         long noteId = getIntent().getLongExtra("noteId", -1);
         DbHelper dbHelper = new DbHelper(this);
-        dbHelper.deleteNote();
+        dbHelper.deleteNote(noteId);
 
         Intent intent = new Intent(Notedesc.this, NoteWallActivity.class);
         intent.putExtra("deletedNoteId", noteId);

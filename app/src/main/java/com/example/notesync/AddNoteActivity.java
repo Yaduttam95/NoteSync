@@ -61,6 +61,8 @@ public class AddNoteActivity extends AppCompatActivity {
             noteText.setText("");
 
             Toast.makeText(this, "Note added successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else {
             Toast.makeText(this, "Please enter all the information", Toast.LENGTH_SHORT).show();
         }

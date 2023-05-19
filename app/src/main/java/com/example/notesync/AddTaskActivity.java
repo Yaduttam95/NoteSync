@@ -60,9 +60,13 @@ public class AddTaskActivity extends AppCompatActivity {
             taskText.setText("");
 
             Toast.makeText(this, "Task added successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else {
             Toast.makeText(this, "Please enter all the information", Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
     public void disbtn(View view) {
